@@ -8,6 +8,9 @@
 **Sitewarden** is a lightweight Python-based tool for monitoring the availability, response time, and health of websites or APIs.  
 It helps developers, sysadmins, and businesses keep track of uptime, detect outages early, and gain insights into performance trends.
 
+![Sitewarden Screenshot](screenshots/sitewarden_snap_0.jpg)
+
+
 ---
 
 ## 🚀 Features
