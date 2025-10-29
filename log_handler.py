@@ -14,7 +14,7 @@ try:
     from requests.exceptions import SSLError, ConnectionError
     from colorama import Fore, Style, Back, init
 
-except ImportError:
+except {ImportError, ModuleNotFoundError} :
     print(" [-] One or more packages required to run this program are missing on this computer...")
     print(' [-] Exiting...')
     exit()
@@ -35,8 +35,8 @@ def clear():
 #   WRITE PING TO LOG FILE
 
 def write_log(ping_count, pingtime, ip_addr, status_code, url):
-
-    file_path = "~/Desktop/sitewarden/logs/logs.txt"
+    
+    file_path = "./logs/logs.txt"
     expanded_path = os.path.expanduser(file_path)
 
     with open(str(expanded_path), 'a') as log:
@@ -64,7 +64,7 @@ def log_file_summary(pingtime, success_count, ping_count, ip_addr_change_count):
 
 def write_csvheader():
 
-    file_path = "~/Desktop/sitewarden/logs/logs.csv"
+    file_path = "./logs/logs.csv"
     expanded_path = os.path.expanduser(file_path)
 
     fields = ['Time', 'Target IP', 'Status']
@@ -76,7 +76,7 @@ def write_csvheader():
 
 def write_csvlog(pingtime, ip_addr, status_code):
 
-    file_path = "~/Desktop/sitewarden/logs/logs.csv"
+    file_path = "./logs/logs.csv"
     expanded_path = os.path.expanduser(file_path)
 
     rows = [pingtime, ip_addr, status_code]

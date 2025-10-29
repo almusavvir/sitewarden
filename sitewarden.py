@@ -3,9 +3,15 @@
 ## URL watcher re-write as site warden
 # Sun Mar 19 9:07pm IST, 26.8C
 
-import requests, time, subprocess, sys, socket, summary, log_handler, os
-from requests.exceptions import SSLError, ConnectionError
-from colorama import Fore, Style, Back, init
+try:
+ import requests, time, subprocess, sys, socket, summary, log_handler, os
+ from requests.exceptions import SSLError, ConnectionError
+ from colorama import Fore, Style, Back, init
+
+except ModuleNotFoundError:
+    print(" \n[!] One or more dependencies required to run this program are missing")
+    print('[*] Install required dependencies using "pip install -r requirements.txt" first\n')
+    exit()
 
 def color_reset():
     print(Fore.RESET + Back.RESET + Style.RESET_ALL, end='')
