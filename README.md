@@ -25,8 +25,11 @@ It helps developers, sysadmins, and businesses keep track of uptime, detect outa
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/sitewarden.git
+git clone https://github.com/almusavvir/sitewarden.git
 cd sitewarden
 
 # Install dependencies
 pip install -r requirements.txt
+
+# Run Sitewarden
+python3 sitewarden.py
