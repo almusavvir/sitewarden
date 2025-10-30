@@ -124,6 +124,14 @@ def handle_response(my_request, url, ip_addr, ping_count, success_count):
         print_status(url, my_request.status_code, 'Forbidden', Fore.WHITE + Back.RED)
         log_handler.write_log(time.ctime(time.time()), ip_addr, my_request.status_code)
         log_handler.write_csvlog(time.ctime(time.time()), ip_addr, my_request.status_code)
+    elif my_request.status_code == 503:
+        print_status(url, my_request.status_code, 'Service unavailable', Fore.RED)
+    elif my_request.status_code == 500:
+        print_status(url, my_request.status_code, 'Internal server error', Fore.RED)    
+    elif my_request.status_code == 301:
+        print_status(url, my_request.status_code, 'Moved permanently', Fore.YELLOW)
+    elif my_request.status_code == 302:
+        print_status(url, my_request.status_code, 'Found (redirect)', Fore.YELLOW)  
     else:
         print(Fore.RED + 'Response failure')
         print(my_request.status_code)
