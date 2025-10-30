@@ -118,20 +118,34 @@ def handle_response(my_request, url, ip_addr, ping_count, success_count):
         print_status(url, my_request.status_code, '[OK]', Fore.GREEN)
         log_handler.write_log(ping_count, time.ctime(time.time()), ip_addr, my_request.status_code, url)
         log_handler.write_csvlog(time.ctime(time.time()), ip_addr, my_request.status_code)
+
     elif my_request.status_code == 404:
         print_status(url, my_request.status_code, 'Not found', Fore.WHITE + Back.RED)
+
     elif my_request.status_code == 403:
         print_status(url, my_request.status_code, 'Forbidden', Fore.WHITE + Back.RED)
-        log_handler.write_log(time.ctime(time.time()), ip_addr, my_request.status_code)
+        log_handler.write_log(ping_count, time.ctime(time.time()), ip_addr, my_request.status_code, url)
         log_handler.write_csvlog(time.ctime(time.time()), ip_addr, my_request.status_code)
+
     elif my_request.status_code == 503:
         print_status(url, my_request.status_code, 'Service unavailable', Fore.RED)
+        log_handler.write_log(ping_count, time.ctime(time.time()), ip_addr, my_request.status_code, url)
+        log_handler.write_csvlog(time.ctime(time.time()), ip_addr, my_request.status_code)
+
     elif my_request.status_code == 500:
-        print_status(url, my_request.status_code, 'Internal server error', Fore.RED)    
+        print_status(url, my_request.status_code, 'Internal server error', Fore.RED)
+        log_handler.write_log(ping_count, time.ctime(time.time()), ip_addr, my_request.status_code, url)
+        log_handler.write_csvlog(time.ctime(time.time()), ip_addr, my_request.status_code)  
+
     elif my_request.status_code == 301:
         print_status(url, my_request.status_code, 'Moved permanently', Fore.YELLOW)
+        log_handler.write_log(ping_count, time.ctime(time.time()), ip_addr, my_request.status_code, url)
+        log_handler.write_csvlog(time.ctime(time.time()), ip_addr, my_request.status_code)
+
     elif my_request.status_code == 302:
         print_status(url, my_request.status_code, 'Found (redirect)', Fore.YELLOW)  
+        log_handler.write_log(ping_count, time.ctime(time.time()), ip_addr, my_request.status_code, url)
+        log_handler.write_csvlog(time.ctime(time.time()), ip_addr, my_request.status_code)
     else:
         print(Fore.RED + 'Response failure')
         print(my_request.status_code)

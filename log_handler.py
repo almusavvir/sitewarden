@@ -45,6 +45,30 @@ def write_log(ping_count, pingtime, ip_addr, status_code, url):
             log.write('\n Check ' + str(ping_count) + ' At ' + str(pingtime) + ' Status of ' +  str(ip_addr) + ' Host - ' + str(url) + ' >> ' + str(status_code) + ' OK')
         elif status_code == 403:
             log.write('\n At ' + str(pingtime) + ' Status of ' + str(ip_addr) + ' >> ' + str(status_code) + ' Forbidden')
+        elif status_code == 301:
+            log.write('\n Check ' + str(ping_count) + ' At ' + str(pingtime) + ' Status of ' + str(ip_addr) + ' Host - ' + str(url) + ' >> ' + str(status_code) + ' Moved Permanently')
+        elif status_code == 302:
+            log.write('\n Check ' + str(ping_count) + ' At ' + str(pingtime) + ' Status of ' + str(ip_addr) + ' Host - ' + str(url) +  ' >> ' + str(status_code) + ' Found (Redirect)')
+        elif status_code == 400:
+            log.write('\n Check ' + str(ping_count) + ' At ' + str(pingtime) + ' Status of ' + str(ip_addr) + ' Host - ' + str(url) +  ' >> ' + str(status_code) + ' Bad Request')
+        elif status_code == 401:
+            log.write('\n Check ' + str(ping_count) + ' At ' + str(pingtime) + ' Status of ' + str(ip_addr) + ' Host - ' + str(url) +  ' >> ' + str(status_code) + ' Unauthorized')
+        elif status_code == 404:
+            log.write('\n Check ' + str(ping_count) + ' At ' + str(pingtime) + ' Status of ' + str(ip_addr) + ' Host - ' + str(url) +  ' >> ' + str(status_code) + ' Not Found')
+        elif status_code == 408:
+            log.write('\n Check ' + str(ping_count) + ' At ' + str(pingtime) + ' Status of ' + str(ip_addr) + ' Host - ' + str(url) +  ' >> ' + str(status_code) + ' Request Timeout')
+        elif status_code == 429:
+            log.write('\n Check ' + str(ping_count) + ' At ' + str(pingtime) + ' Status of ' + str(ip_addr) + ' Host - ' + str(url) +  ' >> ' + str(status_code) + ' Too Many Requests')
+        elif status_code == 500:
+            log.write('\n Check ' + str(ping_count) + ' At ' + str(pingtime) + ' Status of ' + str(ip_addr) + ' Host - ' + str(url) +  ' >> ' + str(status_code) + ' Internal Server Error')
+        elif status_code == 502:
+            log.write('\n Check ' + str(ping_count) + ' At ' + str(pingtime) + ' Status of ' + str(ip_addr) + ' Host - ' + str(url) +  ' >> ' + str(status_code) + ' Bad Gateway')
+        elif status_code == 503:
+            log.write('\n Check ' + str(ping_count) + ' At ' + str(pingtime) + ' Status of ' + str(ip_addr) + ' Host - ' + str(url) +  ' >> ' + str(status_code) + ' Service Unavailable')
+        elif status_code == 504:
+            log.write('\n Check ' + str(ping_count) + ' At ' + str(pingtime) + ' Status of ' + str(ip_addr) + ' Host - ' + str(url) +  ' >> ' + str(status_code) + ' Gateway Timeout')
+        else:
+            log.write('\n Check ' + str(ping_count) + ' At ' + str(pingtime) + ' Status of ' + str(ip_addr) + ' Host - ' + str(url) +  ' >> ' + str(status_code) + ' Response')
 
 
 #  Write IP Change to log file
