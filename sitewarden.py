@@ -98,7 +98,7 @@ def monitor(url, intensity):
             ping_count += 1
 
             if prev_ip_addr != ip_addr:
-                print(f'[*] At {time.ctime(time.time())} | Change in target IP Address detected, new target IP > {ip_addr}')
+                print(f' [*] At {time.ctime(time.time())} | Change in target IP Address detected, new target IP > {ip_addr}')
                 prev_ip_addr = ip_addr
                 log_handler.write_ipchange(time.ctime(time.time()), ip_addr)
                 ip_addr_change_count += 1
