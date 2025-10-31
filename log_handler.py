@@ -76,9 +76,9 @@ def write_log(ping_count, pingtime, ip_addr, status_code, url):
 def write_ipchange(pingtime, ip_addr):
     file_path = "./logs/logs.txt"
     expanded_path = os.path.expanduser(file_path)
-    
+
     with open (str(expanded_path), 'a') as log:
-        log.write('\n\n At ' + str(pingtime) + ' Target IP changed to ' + str(ip_addr) + '\n\n')
+        log.write('\n At ' + str(pingtime) + ' Target IP changed to ' + str(ip_addr))
 
 
 def log_file_summary(pingtime, success_count, ping_count, ip_addr_change_count):
