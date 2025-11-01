@@ -41,7 +41,7 @@ def main_monitor_loop(url):
 
 def print_status(url, status_code, message, color):
     seconds = time.time()
-    print(f' [+] At {time.ctime(seconds)} | {Fore.YELLOW}Reply from {url} | Status - {Fore.CYAN}{status_code}{Fore.WHITE} | {color}{message}')
+    print(f' [+] At {time.ctime(seconds)} | {Fore.YELLOW}Host - {url} | Status - {Fore.CYAN}{status_code}{Fore.WHITE} | {color}{message}')
     color_reset()
 
 def get_user_input():
@@ -106,7 +106,7 @@ def monitor(url, intensity):
             handle_response(my_request, url, ip_addr, ping_count, success_count)
     except KeyboardInterrupt:
         color_reset()
-        print('\n[-] Program halted by keyboard interruption\n')
+        print('\nUser interrupt\n')
         summary.run_summary(success_count, ping_count, ip_addr_change_count)
         log_handler.log_file_summary(time.ctime(time.time()), success_count, ping_count, ip_addr_change_count)
         exit()
