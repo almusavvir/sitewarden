@@ -35,7 +35,7 @@ git clone https://github.com/almusavvir/sitewarden.git
 cd sitewarden
 
 # Install dependencies
-pip install -r requirements.txt
+pip install -r dependencies.txt
 
 # Run Sitewarden
 python3 sitewarden.py
