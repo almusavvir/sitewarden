@@ -15,8 +15,8 @@ try:
     from colorama import Fore, Style, Back, init
 
 except ImportError:
-    print(" [-] One or more packages required to run this program are missing on this computer...")
-    print(' [-] Exiting...')
+    print(" \n[!] One or more dependencies required to run this program are missing")
+    print('[*] Install required dependencies using "pip install -r requirements.txt" first\n')
     exit()
 
 def color_reset():
