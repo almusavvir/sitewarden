@@ -30,6 +30,7 @@ It helps developers, sysadmins, and businesses keep track of uptime, detect outa
 ## 🧰 Installation
 
 ```bash
+# Assuming you have Python3 and PIP installed
 # Clone the repository
 git clone https://github.com/almusavvir/sitewarden.git
 cd sitewarden
